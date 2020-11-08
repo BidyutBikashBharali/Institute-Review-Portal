@@ -1,0 +1,186 @@
+{% extends 'home.html' %}
+
+{%block content%}
+
+<div class="w3-padding-tiny" id="main">
+  
+  <center>
+    <br><br><br>
+      <div class="w3-card-4 w3-padding w3-round-xlarge w3-hide-small w3-white w3-hide-medium" style="width:40%">
+      <img src="{{url_for('review.static', filename='bbb.jpg')}}" class="w3-circle w3-white w3-border-white w3-card-4" style="padding:4px" width="107" height="99"/>
+  <form method='POST' action="{{url_for('institute.U_D_C_0')}}"  class="w3-container w3-padding-small w3-card-4 w3-light-grey w3-text-blue w3-margin">
+  <h2 class="w3-center w3-text-red "><strong>Fill Up All Boxes</strong></h2>
+  
+  {{ form.hidden_tag() }}
+
+  <div class="w3-row w3-section">
+    <div class="w3-col w3-padding-small" style="width:50px"><i class="w3-xlarge fas fa-school"></i></div>
+    <div class="w3-rest">
+          {{ form.institute_name(placeholder="Enter Institute's Full Name...", class="w3-input w3-border") }}
+          {% if form.institute_name.errors %}
+            <div style="color:rgb(255, 17, 0)">{% for error in form.institute_name.errors %}{{ error }}{% endfor %}</div>
+          {% endif %}
+    </div>
+  </div>
+  
+  <div class="w3-row w3-section">
+    <div class="w3-col w3-padding-small" style="width:50px"><i class=" w3-xxlarge material-icons">place</i></div>
+    <div class="w3-rest">
+        {{ form.institute_address(placeholder='Enter Institute Address [City/Town name only]', class="w3-input w3-border") }}
+        {% if form.institute_address.errors %}
+          <div style="color:rgb(255, 17, 0)">{% for error in form.institute_address.errors %}{{ error }}{% endfor %}</div>
+        {% endif %}
+    </div>
+  </div>
+
+  
+  <!---- <div class="w3-center w3-text-black " style="font-size: 13px"><i>Please type website name carefully! It must be accurate. If you don't know Institute Website, click </i><strong class="w3-text-red">"Find Here" </strong> <i>button</i></div><br>  -->
+  
+ 
+     
+    <center><button  id="myBtn1"  onclick="myFunction()"  class="w3-button w3-round w3-blue">Find Institute</button></center><br>
+
+  
+  <!-- <button   onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-block w3-section w3-blue w3-round w3-ripple w3-padding">Send</button> -->
+   
+
+
+  <script>
+    function myFunction() {
+      document.getElementById("myBtn1").disabled = true;
+    }
+  </script>
+
+
+  </form><br>
+
+</div>
+  
+  </center>
+    
+  
+  
+  
+  
+  
+  
+  
+  <center><br>
+      <div class="w3-card-4 w3-padding w3-round-xlarge w3-white w3-hide-large w3-hide-small" style="width:60%">
+     <img src="{{url_for('review.static', filename='bbb.jpg')}}" class="w3-circle w3-white w3-border-white w3-card-4" style="padding:4px" width="107" height="99"/>
+  <form method='POST' action="{{url_for('institute.U_D_C_0')}}"   class="w3-container-small  w3-card-4 w3-light-grey w3-text-blue w3-margin">
+  <h2 class="w3-center w3-text-red"><strong>Fill Up All Boxes</strong></h2>
+  
+  {{ form.hidden_tag() }}
+  
+  <div class="w3-row w3-section w3-small">
+    <div class="w3-col w3-padding-small" style="width:40px"><i class="w3-xlarge fas fa-school"></i></div>
+      <div class="w3-rest w3-padding-small">
+        <div class="w3-rest">
+          {{ form.institute_name(placeholder="Enter Institute's Full Name...", class="w3-input w3-border") }}
+          {% if form.institute_name.errors %}
+            <div style="color:rgb(255, 17, 0)">{% for error in form.institute_name.errors %}{{ error }}{% endfor %}</div>
+          {% endif %}
+        </div>
+      </div>
+  </div>
+  
+  <div class="w3-row w3-section w3-small">
+    <div class="w3-col w3-padding-small" style="width:40px"><i class=" w3-xxlarge material-icons">place</i></div>
+      <div class="w3-rest w3-padding-small">
+          <div class="w3-rest">
+            {{ form.institute_address(placeholder='Enter Institute Address  [City/Town name only]', class="w3-input w3-border") }}
+            {% if form.institute_address.errors %}
+            <div style="color:rgb(255, 17, 0)">{% for error in form.institute_address.errors %}{{ error }}{% endfor %}</div>
+            {% endif %}
+          </div>
+      </div>
+  </div>
+  
+
+  
+  <!-- <div class="w3-center w3-text-black w3-padding-small" style="font-size: 11px"><i>Please type website name carefully! It must be accurate. If you don't know Institute Website, click </i><strong class="w3-text-red">"Find Here" </strong> <i>button</i></div><br> -->
+  
+  <center><button  id="myBtn2"  onclick="myFunctionn()" class="w3-button w3-round w3-blue">Find Institute</button></center><br>
+  
+     
+  
+  <script>
+    function myFunctionn() {
+      document.getElementById("myBtn2").disabled = true;
+    }
+  </script>
+
+
+  
+  </form><br>
+    </div><br>
+  
+  </center>
+  
+  
+  
+  
+  
+  <center><br>
+  <div class="w3-padding-tiny w3-mobile w3-hide-large w3-hide-medium">
+    
+  <form method='POST' action="{{url_for('institute.U_D_C_0')}}"  class=" w3-container-small w3-card-4 w3-round-xlarge w3-light-grey w3-text-blue w3-margin">
+  <br><img src="{{url_for('review.static', filename='bbb.jpg')}}" class="w3-circle w3-white w3-border-white w3-card-4" style="padding:4px" width="107" height="99">
+   
+  {{ form.hidden_tag() }}
+  
+  <div class="w3-row w3-section w3-tiny">
+    <div class="w3-col w3-padding-small" style="width:40px"><i class="w3-xlarge fas fa-school"></i></div>
+      <div class="w3-rest w3-padding-small">
+          <div class="w3-rest">
+            {{ form.institute_name(placeholder="Enter Institute's Full Name...", class="w3-input w3-border") }}
+            {% if form.institute_name.errors %}
+              <div style="color:rgb(255, 17, 0)">{% for error in form.institute_name.errors %}{{ error }}{% endfor %}</div>
+            {% endif %}
+          </div>
+      </div>
+  </div>
+  
+  <div class="w3-row w3-section w3-tiny">
+    <div class="w3-col w3-padding-small" style="width:40px"><i class=" w3-xxlarge material-icons">place</i></div>
+      <div class="w3-rest w3-padding-small">
+          <div class="w3-rest">
+            {{ form.institute_address(placeholder='Enter Institute Address [City/Town name only]', class="w3-input w3-border") }}
+            {% if form.institute_address.errors %}
+              <div style="color:rgb(255, 17, 0)">{% for error in form.institute_address.errors %}{{ error }}{% endfor %}</div>
+            {% endif %}
+          </div>
+      </div>
+  </div>
+  
+
+  <!-- <div class="w3-center w3-text-black w3-padding-small" style="font-size: 10px"><i>Please type website name carefully! It must be accurate. If you don't know Institute Website, click </i><strong class="w3-text-red">"Find Here" </strong> <i>button</i></div><br>  -->
+  
+  <center> <button   id="myBtn3"  onclick="myFunctionnn()"   class="w3-button w3-round w3-tiny w3-blue" style="width: 50%" >Find Institute</button> </center><br><br>
+
+     
+
+  <script>
+    function myFunctionnn() {
+      document.getElementById("myBtn3").disabled = true;
+    }
+  </script>
+
+
+  
+
+  </form>
+
+  </div>
+  
+  </center>
+  
+  
+  
+  
+  </div>
+  
+
+{%endblock%}
+  

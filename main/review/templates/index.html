@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>User</title>
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='style.css') }}">
+
+  </head>
+  <body>
+     <center>
+            <div style="color:rgb(255, 17, 0)"><h1>Hello, type something to begin!</h1></div>
+            <form method='POST' action="{{url_for('institute.U_D_C_0')}}">
+                {{ form.institute_name(placeholder='Enter Institute Name...') }} {{ form.institute_name.label }}<br><br>
+                {% if form.institute_name.errors %}
+                  <div style="color:rgb(255, 17, 0)">{% for error in form.institute_name.errors %}{{ error }}{% endfor %}</div>
+                {% endif %}
+                <br>
+
+                
+                {{ form.institute_address(placeholder='Enter Institute Address...') }} {{ form.institute_address.label }}<br><br>
+                {% if form.institute_address.errors %}
+                  <div style="color:rgb(255, 17, 0)">{% for error in form.institute_address.errors %}{{ error }}{% endfor %}</div>
+                {% endif %}
+                <br>
+                
+
+
+                {{ form.institute_website(placeholder='Eg: https://www.example.com(URL must start with "https://")', size="60", pattern="^(https?://)?([a-zA-Z0-9]([a-zA-ZäöüÄÖÜ0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$")}} {{ form.institute_website.label }}<br><br>
+                {% if form.institute_website.errors %}
+                  <div style="color:rgb(255, 17, 0)">{% for error in form.institute_website.errors %}{{ error }}{% endfor %}</div>
+                {% endif %}<br>
+
+
+                <input id="submit" type="submit" value="Submit"/>
+              </form><br>
+
+              <img src="{{url_for('static', filename='bbb.jpg')}}"/>
+              
+    </center>
+  </body>
+</html>

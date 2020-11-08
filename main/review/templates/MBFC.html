@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-metro.css">
+<body class="w3-dark-gray">
+
+
+  <div class="w3-padding-large" id="main">
+    <div class="w3-container">
+   
+    <div class="w3-content w3-justify w3-text-white w3-padding-32">
+      <center>
+        <img src="{{url_for('review.static', filename='bbb.jpg')}}" class="w3-circle w3-black w3-border-white w3-card-4" style="padding:4px" width="142" height="130">
+
+          <h3>IDENTIFY INSTITUTE</h3>
+          <hr style="width:50%" class="w3-opacity">
+          <h5  class="w3-content w3-justify w3-text-white w3-padding-32">Indentify and confirm the institute about which you want to give review. If the institute is not that what you want then please cancel and retype institute's name and address correctly.</h5>
+          <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-blue w3-large">Continue</button>
+      </center>
+
+    </div>
+
+
+
+
+
+
+
+
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-light-gray w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+      <br>
+        <div class="w3-container w3-center" >
+            <h1 class="w3-blue w3-card-2 w3-round-large w3-large w3-padding-small w3-text-shadow"><strong>Is This What On which You Want To Write Review?</strong></h1>
+           
+        </div>
+
+      <div class="w3-container w3-center" >
+        <div class="w3-section">
+          <div class="w3-white w3-round-xlarge w3-card-4 w3-padding">
+              <h1 class=" w3-large w3-text-shadow"><strong>{{title}}</strong></h1>
+              
+              {% if srcc == "Not Found!" %}
+                   <img src="{{url_for('review.static', filename='noimage.jpg')}}"  style="width:50%" class=" w3-margin-top "  style="width:50%" class=" w3-margin-top ">
+        
+              {% else %}
+                   <img src="{{srcc}}"   style="width:50%" class=" w3-margin-top "  style="width:50%" class=" w3-margin-top ">
+              {% endif %}
+       
+              <div class="w3-content w3-justify ">
+                
+                <h6 style="font-size: 13px"><b>Established:</b> <i class="w3-text-blue" style="font-size: 14px">{{founded_in}}</i></h6>
+                <h6 style="font-size: 13px"><b>Address:</b> <i class="w3-text-blue" style="font-size: 14px">{{address}}</i></h6>
+                <h6 style="font-size: 13px"><b>Map:</b> <i class="w3-text-blue" style="font-size: 14px"><a href="{{loctn}}">Click Here To See On Map</a></i></h6>
+                <h6 style="font-size: 13px"><b>Website:</b> <i class="w3-text-blue" style="font-size: 14px"><a href="{{linkk}}">{{linkk}}</a></i></h6>
+              </div>
+        </div>
+      </div>
+     </div>
+
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <!--<button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-btn w3-green">Cancel</button> -->
+        <span class="w3-left"><a href="{{url_for('institute.U_D_C_0')}}"  class="w3-btn w3-green">Cancel</a></span>
+        <span class="w3-right"><a href="{{url_for('institute.I_D_C')}}"  class="w3-btn w3-red">Confirm</a></span>
+      </div>
+
+    </div>
+    <br><br><br><br><br><br>
+  </div>
+</div>
+</div>
+
+            
+</body>
+</html>

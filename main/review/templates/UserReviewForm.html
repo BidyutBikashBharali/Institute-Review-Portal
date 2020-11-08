@@ -1,0 +1,190 @@
+{% extends 'home.html' %}
+
+{%block content%}
+
+
+<div class="w3-padding-large" id="main">
+  
+<center>
+  <br><br>
+    <div class="w3-card-4 w3-padding w3-round-xlarge w3-hide-small w3-white w3-hide-medium" style="width:40%">
+    <img  src="{{url_for('review.static', filename='bbb.jpg')}}"  class="w3-circle w3-white w3-border-white w3-card-4" style="padding:4px" width="107" height="99">
+<form method='POST' action="{{url_for('review.U_D_C_1')}}" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+<h2 class="w3-center w3-text-red "><strong>Fill Up All Boxes</strong></h2>
+
+{{ form.hidden_tag() }}
+ 
+<div class="w3-row w3-section">
+  <div class="w3-col w3-padding-small" style="width:50px"><i class="w3-xlarge far fa-user"></i></div>
+    <div class="w3-rest">
+      {{ form.first_name(placeholder='First Name...', class="w3-input w3-border") }}
+      {% if form.first_name.errors %}
+        <div style="color:rgb(255, 17, 0)">{% for error in form.first_name.errors %}{{ error }}{% endfor %}</div>
+      {% endif %}
+    </div>
+</div>
+
+<div class="w3-row w3-section">
+  <div class="w3-col w3-padding-small" style="width:50px"><i class=" w3-xlarge far fa-user"></i></div>
+    <div class="w3-rest">
+      {{ form.last_name(placeholder='Last Name...', class="w3-input w3-border") }}
+          {% if form.last_name.errors %}
+            <div style="color:rgb(255, 17, 0)">{% for error in form.last_name.errors %}{{ error }}{% endfor %}</div>
+          {% endif %}
+    </div>
+</div>
+
+<div class="w3-row w3-section">
+  <div class="w3-col w3-padding-small" style="width:50px"><i class="w3-xlarge far fa-edit"></i></div>
+    <div class="w3-rest">
+        {{ form.content(placeholder="Review the institute covering these all topics 'Entrance Preview'  'Fee Structure And Facilities'  'Placement Wing'  'Hostel Facilities'  'Faculty And Alumni'  'Campus Life'  'Exam Structure'  'Course Curriculum Overview'  'Internship Opportunities' & 'Loan/Scholarship Provisions' ", class="w3-input w3-border") }}
+        {% if form.content.errors %}
+          <div style="color:rgb(255, 17, 0)">{% for error in form.content.errors %}{{ error }}{% endfor %}</div>
+        {% endif %}
+    </div>
+</div>
+
+<center><button  id="myBtn1"  onclick="myFunction()"  class="w3-button w3-round w3-blue">Find Institute</button></center><br>
+
+<script>
+  function myFunction() {
+    document.getElementById("myBtn1").disabled = true;
+  }
+</script>
+
+</form>
+  </div>
+  <br>
+
+</center>
+
+
+
+
+
+
+
+
+<center>
+    <div class="w3-card-4 w3-padding w3-round-xlarge w3-white w3-hide-large w3-hide-small" style="width:60%">
+   <img  src="{{url_for('review.static', filename='bbb.jpg')}}"  class="w3-circle w3-white w3-border-white w3-card-4" style="padding:4px" width="107" height="99">
+<form method='POST' action="{{url_for('review.U_D_C_1')}}" class="w3-container-small  w3-card-4 w3-light-grey w3-text-blue w3-margin">
+<h2 class="w3-center w3-text-red"><strong>Fill Up All Boxes</strong></h2>
+
+{{ form.hidden_tag() }}
+ 
+<div class="w3-row w3-section w3-small">
+  <div class="w3-col w3-padding-small" style="width:40px"><i class="w3-xlarge far fa-user"></i></div>
+    <div class="w3-rest w3-padding-small">
+      {{ form.first_name(placeholder='First Name...', class="w3-input w3-border") }}
+      {% if form.first_name.errors %}
+        <div style="color:rgb(255, 17, 0)">{% for error in form.first_name.errors %}{{ error }}{% endfor %}</div>
+      {% endif %}
+    </div>
+</div>
+
+<div class="w3-row w3-section w3-small">
+  <div class="w3-col w3-padding-small" style="width:40px"><i class=" w3-xlarge far fa-user"></i></div>
+    <div class="w3-rest w3-padding-small">
+      {{ form.last_name(placeholder='Last Name...', class="w3-input w3-border") }}
+      {% if form.last_name.errors %}
+        <div style="color:rgb(255, 17, 0)">{% for error in form.last_name.errors %}{{ error }}{% endfor %}</div>
+      {% endif %}
+    </div>
+</div>
+
+<div class="w3-row w3-section w3-small">
+  <div class="w3-col w3-padding-small" style="width:40px"><i class="w3-xlarge far fa-edit"></i></div>
+    <div class="w3-rest w3-padding-small">
+        {{ form.content(placeholder="Review the institute covering these all topics 'Entrance Preview'  'Fee Structure And Facilities'  'Placement Wing'  'Hostel Facilities'  'Faculty And Alumni'  'Campus Life'  'Exam Structure'  'Course Curriculum Overview'  'Internship Opportunities' & 'Loan/Scholarship Provisions' ", class="w3-input w3-border") }}
+        {% if form.content.errors %}
+          <div style="color:rgb(255, 17, 0)">{% for error in form.content.errors %}{{ error }}{% endfor %}</div>
+        {% endif %}
+    </div>
+</div>
+
+<center><button  id="myBtn2"  onclick="myFunctionn()" class="w3-button w3-round w3-blue">Find Institute</button></center><br>
+  
+     
+  
+  <script>
+    function myFunctionn() {
+      document.getElementById("myBtn2").disabled = true;
+    }
+  </script>
+
+
+</form>
+  </div>
+  <br><br>
+
+</center>
+
+
+
+
+
+
+<center>
+    <div class="w3-padding-tiny w3-mobile w3-hide-large w3-hide-medium " >
+  
+<form method='POST' action="{{url_for('review.U_D_C_1')}}" class="w3-container-small w3-card-4 w3-round-xlarge w3-light-grey w3-text-blue w3-margin">
+<br><img  src="{{url_for('review.static', filename='bbb.jpg')}}"  class="w3-circle w3-white w3-border-white w3-card-4" style="padding:4px" width="107" height="99">
+
+{{ form.hidden_tag() }}
+ 
+<div class="w3-row w3-section w3-tiny">
+  <div class="w3-col w3-padding-small" style="width:40px"><i class="w3-xlarge far fa-user"></i></div>
+    <div class="w3-rest w3-padding-small">
+      {{ form.first_name(placeholder='First Name...', class="w3-input w3-border") }}
+      {% if form.first_name.errors %}
+        <div style="color:rgb(255, 17, 0)">{% for error in form.first_name.errors %}{{ error }}{% endfor %}</div>
+      {% endif %}
+    </div>
+</div>
+
+<div class="w3-row w3-section w3-tiny">
+  <div class="w3-col w3-padding-small" style="width:40px"><i class=" w3-xlarge far fa-user"></i></div>
+    <div class="w3-rest w3-padding-small">
+      {{ form.last_name(placeholder='Last Name...', class="w3-input w3-border") }}
+      {% if form.last_name.errors %}
+        <div style="color:rgb(255, 17, 0)">{% for error in form.last_name.errors %}{{ error }}{% endfor %}</div>
+      {% endif %}
+    </div>
+</div>
+
+<div class="w3-row w3-section w3-tiny">
+  <div class="w3-col w3-padding-small" style="width:40px"><i class="w3-xlarge far fa-edit"></i></div>
+    <div class="w3-rest w3-padding-small">
+        {{ form.content(placeholder="Review the institute covering these all topics 'Entrance Preview'  'Fee Structure And Facilities'  'Placement Wing'  'Hostel Facilities'  'Faculty And Alumni'  'Campus Life'  'Exam Structure'  'Course Curriculum Overview'  'Internship Opportunities' & 'Loan/Scholarship Provisions' ", class="w3-input w3-border") }}
+        {% if form.content.errors %}
+          <div style="color:rgb(255, 17, 0)">{% for error in form.content.errors %}{{ error }}{% endfor %}</div>
+        {% endif %}
+    </div>
+</div>
+
+<center> <button   id="myBtn3"  onclick="myFunctionnn()"   class="w3-button w3-round w3-tiny w3-blue" style="width: 50%" >Find Institute</button> </center><br>
+
+     
+
+  <script>
+    function myFunctionnn() {
+      document.getElementById("myBtn3").disabled = true;
+    }
+  </script>
+
+  
+</form>
+  </div>
+
+</center>
+<br>
+
+
+  <!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
+
+{%endblock%}

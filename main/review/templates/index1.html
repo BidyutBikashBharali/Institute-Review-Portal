@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Review</title>
+  </head>
+  <body>
+     <center>
+            <div style="color:rgb(255, 17, 0)"><h1>Hello Type something to begin!</h1></div>
+            <form method='POST' action="{{url_for('review.U_D_C_1')}}">
+
+              {{ form.first_name(placeholder='Enter First Name...') }} {{ form.first_name.label }}<br><br>
+              {% if form.first_name.errors %}
+                <div style="color:rgb(255, 17, 0)">{% for error in form.first_name.errors %}{{ error }}{% endfor %}</div>
+              {% endif %}
+              <br>
+
+              
+              {{ form.last_name(placeholder='Enter Last Name...') }} {{ form.last_name.label }}<br><br>
+              {% if form.last_name.errors %}
+                <div style="color:rgb(255, 17, 0)">{% for error in form.last_name.errors %}{{ error }}{% endfor %}</div>
+              {% endif %}
+              <br>
+
+
+              {{ form.content(placeholder='Enter Review...') }} {{ form.content.label }}<br><br>
+              {% if form.content.errors %}
+                <div style="color:rgb(255, 17, 0)">{% for error in form.content.errors %}{{ error }}{% endfor %}</div>
+              {% endif %}
+              <br><br>
+
+
+            <input type="submit" value="Comment"/>
+            </form>
+            <br>
+            <img src="{{url_for('review.static', filename='bbb.jpg')}}"/>
+    </center>
+  </body>
+</html>

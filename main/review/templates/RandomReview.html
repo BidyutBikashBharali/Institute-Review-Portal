@@ -1,0 +1,160 @@
+{% extends 'home.html' %}
+
+{%block content%}
+
+
+<div class="w3-padding-large" id="main">
+  
+<center>
+ 
+  <br>
+  {% for rr in r_r %}
+    <div class="w3-card-4 w3-padding-tiny  w3-light-gray w3-topbar w3-border-black w3-border w3-hide-small w3-hide-medium w3-white" style="width:50%">
+   
+  <div class="w3-content w3-{{color}} w3-padding-small w3-justify">
+  
+  <div class="w3-col w3-padding-tiny"><i class="w3-xxlarge w3-text-white fas fa-user-circle"></i><span class="w3-text-white w3-padding-small" style="font-size: 24px"><strong>{{rr.first_name}} {{rr.last_name}}</strong></span></div>
+       <div><i class="material-icons" style="font-size:15px;color:white">access_time</i><span style="font-size:15px; color:white">{{rr.date_created}}</span></div>
+
+
+       <div style="font-size: 15px">From: <i class="w3-text-white" style="font-size: 15px">{{rr.institute.institute_name}}</i></div>
+       <div><span style="font-size: 15px">Situated At: <i class="w3-text-white" style="font-size: 15px">{{rr.institute.institute_address}}</i></span></div>
+  
+  <button  class="myClass{{rr.i_r_d}} w3-right w3-tiny w3-button w3-round w3-{{bcolor}} w3-hover-gray w3-card-4" ><strong>Show</strong></button><br><br>
+   </div>
+ 
+<div  class="myText{{rr.i_r_d}}  w3-container w3-border-top w3-padding-16 w3-dark-gray w3-text-white w3-content w3-padding-small w3-justify"   style="font-size:14px; display: none">
+      {{rr.content}}
+</div> 
+</div>
+<br>
+
+
+
+
+
+<script type="text/javascript"> /*BY DEFAULT TEXT WILL BE HIDE = IF BUTTON NAME IS 'Show' AND PUT 'display: none' IN STYLE OF THE TEXT'S DIV.*/
+          /* BY DEFAULT TEXT WILL BE SHOWN = BUTTON NAME IS 'Hide' AND REMOVE THE 'display: none' ON STYLE FROM THE DIV OF TEXT.*/
+  $(".myClass{{rr.i_r_d}}").click(function() {
+  
+   var lable = $(".myClass{{rr.i_r_d}}").text().trim();
+
+   if(lable == "Hide") {
+     $(".myClass{{rr.i_r_d}}").text("Show");
+     $(".myText{{rr.i_r_d}}").hide();
+   }
+   else {
+     $(".myClass{{rr.i_r_d}}").text("Hide");
+     $(".myText{{rr.i_r_d}}").show();
+   }
+    
+  });
+
+</script>
+{% endfor %}
+</center>
+
+
+
+
+
+
+
+<center>
+  
+  {% for rr in r_r %}
+ <div class="w3-card-4 w3-padding-tiny  w3-light-gray w3-topbar w3-border-black w3-border w3-hide-small w3-hide-large w3-white" style="width:70%">
+   
+     <div class="w3-content w3-{{color}} w3-padding-small w3-justify">
+  <div class="w3-col w3-padding-tiny"><i class="w3-xxlarge w3-text-white fas fa-user-circle"></i><span class="w3-text-white w3-padding-small" style="font-size: 23px"><strong>{{rr.first_name}} {{rr.last_name}}</strong></span></div>
+       <div><i class="material-icons" style="font-size:14px;color:white">access_time</i><span style="font-size:14px; color:white">{{rr.date_created}}</span></div>
+       <div style="font-size: 14px">From: <i class="w3-text-white" style="font-size: 14px">{{rr.institute.institute_name}}</i></div>
+       <div><span style="font-size: 14px">Situated At:  <i class="w3-text-white" style="font-size: 14px">{{rr.institute.institute_address}}</i></span></div>
+
+  <button class="myClasss{{rr.i_r_d}} w3-right w3-tiny w3-button w3-round w3-{{bcolor}} w3-hover-gray w3-card-4" ><strong>Show</strong></button><br><br>
+   </div>
+
+<div class="myTextt{{rr.i_r_d}} w3-container w3-border-top w3-padding-16 w3-dark-gray w3-text-white w3-content w3-padding-small w3-justify"   style="font-size:13px; display: none">
+  {{rr.content}}
+</div>
+
+</div>
+<br>
+
+
+<script type="text/javascript"> /*BY DEFAULT TEXT WILL BE HIDE = IF BUTTON NAME IS 'Show' AND PUT 'display: none' IN STYLE OF THE TEXT'S DIV.*/
+  /* BY DEFAULT TEXT WILL BE SHOWN = BUTTON NAME IS 'Hide' AND REMOVE THE 'display: none' ON STYLE FROM THE DIV OF TEXT.*/
+$(".myClasss{{rr.i_r_d}}").click(function() {
+
+var lable = $(".myClasss{{rr.i_r_d}}").text().trim();
+
+if(lable == "Hide") {
+$(".myClasss{{rr.i_r_d}}").text("Show");
+$(".myTextt{{rr.i_r_d}}").hide();
+}
+else {
+$(".myClasss{{rr.i_r_d}}").text("Hide");
+$(".myTextt{{rr.i_r_d}}").show();
+}
+
+});
+
+</script>
+{% endfor %}
+
+  
+</div>
+</center>
+
+
+
+<center>
+
+  {% for rr in r_r %}
+  <div class="w3-card-4 w3-padding-tiny  w3-light-gray w3-topbar w3-border-black w3-border w3-hide-large w3-hide-medium w3-white"  style="width: 88%">
+   
+  <div class="w3-content w3-{{color}} w3-padding-small w3-justify">
+  <div class="w3-col w3-padding-tiny"><i class="w3-xlarge w3-text-white fas fa-user-circle"></i><span class="w3-text-white w3-padding-small" style="font-size: 17px"><strong>{{rr.first_name}} {{rr.last_name}}</strong></span></div>
+       <div><i class="material-icons" style="font-size:13px;color:white">access_time</i><span style="font-size:13px; color:white">{{rr.date_created}}</span></div>
+       <div style="font-size: 13px">From: <i class="w3-text-white" style="font-size: 13px">{{rr.institute.institute_name}}</i></div>
+       <div><span style="font-size: 13px">Situated At: <i class="w3-text-white" style="font-size: 13px">{{rr.institute.institute_address}}</i></span></div>
+
+  <button class="myClassss{{rr.i_r_d}} w3-right w3-tiny w3-button w3-round w3-{{bcolor}} w3-hover-gray w3-card-4" ><strong>Show</strong></button><br><br>
+   </div>
+
+<div class="myTexttt{{rr.i_r_d}} w3-container w3-border-top w3-dark-gray w3-text-white w3-content w3-padding-small w3-justify"   style="font-size:12px; display: none">
+  {{rr.content}}
+</div>
+
+</div>
+<br>
+
+<script type="text/javascript"> /*BY DEFAULT TEXT WILL BE HIDE = IF BUTTON NAME IS 'Show' AND PUT 'display: none' IN STYLE OF THE TEXT'S DIV.*/
+  /* BY DEFAULT TEXT WILL BE SHOWN = BUTTON NAME IS 'Hide' AND REMOVE THE 'display: none' ON STYLE FROM THE DIV OF TEXT.*/
+$(".myClassss{{rr.i_r_d}}").click(function() {
+
+var lable = $(".myClassss{{rr.i_r_d}}").text().trim();
+
+if(lable == "Hide") {
+$(".myClassss{{rr.i_r_d}}").text("Show");
+$(".myTexttt{{rr.i_r_d}}").hide();
+}
+else {
+$(".myClassss{{rr.i_r_d}}").text("Hide");
+$(".myTexttt{{rr.i_r_d}}").show();
+}
+
+});
+
+</script>
+{% endfor %}
+
+ 
+</div>
+</center>
+
+
+  
+</div>
+
+{%endblock%}
